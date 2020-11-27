@@ -14,8 +14,4 @@ class User < ApplicationRecord
     validates :birth_day
     validates :nickname
   end
-
-  
-    
-    
 end
