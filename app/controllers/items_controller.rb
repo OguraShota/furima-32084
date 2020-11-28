@@ -1,4 +1,4 @@
-class ItemsController < ApplicationController
+class ItemsController < ActiveHash::Base
   def index
   end
 
