@@ -1,5 +1,5 @@
 FactoryBot.define do
-  password = '1a'+Faker::Internet.password(min_length: 6, max_length: 8)
+  password = '1a' + Faker::Internet.password(min_length: 6, max_length: 8)
 
   factory :user do
     nickname              { Faker::Name.last_name }
