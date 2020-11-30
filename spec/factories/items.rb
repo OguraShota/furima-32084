@@ -7,11 +7,11 @@ FactoryBot.define do
     postage_type_id { 2 }
     preparation_day_id { 2 }
     ship_from_id { 2 }
-    price { '300' }
-    
+    price { 300 }
+
     association :user
     after(:build) do |item|
       item.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
-    end 
+    end
   end
 end
