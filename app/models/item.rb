@@ -16,7 +16,7 @@ class Item < ApplicationRecord
     validates :price, format: { with: /\A[0-9]+\z/, message: 'half-width number' }
     validates :user
   end
-  
+
   with_options presence: true do
     validates :category_id, numericality: { other_than: 0, message: 'select'  }
     validates :condition_id, numericality: { other_than: 0, message: 'select' }
@@ -26,5 +26,4 @@ class Item < ApplicationRecord
   end
 
   validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'is out of setting range' }
-
 end
