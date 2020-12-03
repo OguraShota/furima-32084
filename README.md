@@ -14,7 +14,7 @@
 | birth_day          | date   | null: false |
 
 - has_many :items
-- has_many :purchase_recorders
+- has_many :purchase_records
 
 ## items テーブル
 
@@ -38,16 +38,16 @@
 | Column               | Type       | Options     |
 | ---------            | ---------- | ----------- |
 | postal_code          | string     | null: false |
-| prefectures_id       | integer    | null: false |
+| prefecture_id       | integer    | null: false |
 | city                 | string     | null: false |
 | house_number         | string     | null: false |
 | building_name        | string     |
 | phone_number         | integer    | null: false |
-| purchase_recorder    | references | null: false, foreign_key: true |
+| purchase_record      | references | null: false, foreign_key: true |
 
 - belongs_to : purchase_record
 
-## purchase_recorder テーブル
+## purchase_records テーブル
 
 | Column        | Type       | Options     |
 | ---------     | ---------- | ----------- |
