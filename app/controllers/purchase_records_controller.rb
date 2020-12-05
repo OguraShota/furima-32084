@@ -3,10 +3,8 @@ class PurchaseRecordsController < ApplicationController
   before_action :set_item, only: [:index, :create]
 
   def index
-    @order_address = OrderAddress.new 
-    if current_user == @item.user || @item.purchase_record.present?
-      redirect_to root_path
-    end 
+    @order_address = OrderAddress.new
+    redirect_to root_path if current_user == @item.user || @item.purchase_record.present?
   end
 
   def create
@@ -23,7 +21,7 @@ class PurchaseRecordsController < ApplicationController
   private
 
   def pay_item
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
       amount: @item[:price],
       card: purchase_record_params[:token],
@@ -38,5 +36,4 @@ class PurchaseRecordsController < ApplicationController
   def set_item
     @item = Item.find(params[:item_id])
   end
-
 end
