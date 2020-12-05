@@ -5,5 +5,6 @@ FactoryBot.define do
     city { '八潮市' }
     house_number { '1-1-1' }
     phone_number { '08088888888' }
+    token {"tok_abcdefghijk00000000000000000"}
   end
 end
